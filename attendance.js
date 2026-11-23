@@ -8,8 +8,8 @@ async function getDatas()
 	if ( data ) {
 		const newData = data.split(',');
 		newData.sort((a,b) => {
-			const nameA = a.split('-')[0];
-			const nameB = b.split('-')[0];
+			const nameA = a.split('-')[0][0];
+			const nameB = b.split('-')[0][0];
 			return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
 		});
 		const list = document.getElementById("studentsList");
