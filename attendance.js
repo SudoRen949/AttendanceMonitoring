@@ -19,8 +19,7 @@ async function getDatas()
 		for ( let i = 0; i < letters.length; ++i ) {
 			for ( let j = 0; j < newData.length; ++j ) {
 				const ids = newData[j].split('-');
-				if ( list.innerHTML.includes(ids[0]) ) continue;
-				if ( ids[0][0] == letters[i] ) {
+				if ( ids[0][0] == letters[i] && !list.innerHTML.includes(ids[0]) ) {
 					// namesList.push(newData[j]);
 					list.innerHTML += `
 						<tr>
