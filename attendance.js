@@ -7,9 +7,16 @@ async function getDatas()
 	const data = await response.text();
 	if ( data ) {
 		const newData = data.split(',');
+		newData.sort((a,b) => {
+			const nameA = a.split('-')[0];
+			const nameB = b.split('-')[0];
+			return nameA.localCompare(nameB, undefined, { sensitivity: 'base' });
+		});
+		const list = document.getElementById("studentsList");
 		for ( let i = 0; i < newData.length; ++i ) {
 			const ids = newData[i].split('-');
-			document.getElementById("studentsList").innerHTML += `
+			if ( list.innerHTML.includes(ids[0]) ) continue;
+			list.innerHTML += `
 				<tr>
 					<td>${ ids[0] }</td>
 					<td>${ ids[1] }</td>
