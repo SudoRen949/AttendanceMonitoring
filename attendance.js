@@ -10,7 +10,7 @@ async function getDatas()
 		newData.sort((a,b) => {
 			const nameA = a.split('-')[0];
 			const nameB = b.split('-')[0];
-			return nameA.localCompare(nameB, undefined, { sensitivity: 'base' });
+			return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
 		});
 		const list = document.getElementById("studentsList");
 		for ( let i = 0; i < newData.length; ++i ) {
