@@ -15,10 +15,11 @@ async function getDatas()
 		const list = document.getElementById("studentsList");
 		for ( let i = 0; i < newData.length; ++i ) {
 			const ids = newData[i].split('-');
-			if ( list.innerHTML.includes(ids[0]) ) continue;
+			const studentName = document.getElementById(`name-${ i }`);
+			if ( studentName.textContent.includes(ids[0]) ) continue;
 			list.innerHTML += `
 				<tr>
-					<td>${ ids[0] }</td>
+					<td id="name-${i}">${ ids[0] }</td>
 					<td>${ ids[1] }</td>
 					<td>${ ids[2] }</td>
 					<td>${ ids[3] }</td>
