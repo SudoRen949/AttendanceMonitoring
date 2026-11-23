@@ -8,9 +8,11 @@ async function getDatas()
 	if ( data ) {
 		const newData = data.split(',');
 		newData.sort((a,b) => {
-			const nameA = a.split('-')[0][0];
-			const nameB = b.split('-')[0][0];
-			return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
+			const nameA = a.split('-')[0];
+			const nameB = b.split('-')[0];
+			const nameLetterA = nameA[0];
+			const nameLetterB = nameB[0];
+			return nameLetterA.localeCompare(nameLetterB, undefined, { sensitivity: 'base' });
 		});
 		const list = document.getElementById("studentsList");
 		for ( let i = 0; i < newData.length; ++i ) {
