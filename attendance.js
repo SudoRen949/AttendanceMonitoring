@@ -29,7 +29,7 @@ async function getDatas()
 	}
 }
 
-document.getElementById("dateToday").innerText = new Date().toDateString();
+// document.getElementById("dateToday").innerText = new Date().toDateString();
 
 // getDatas();
 
@@ -44,5 +44,5 @@ function addBlankRows(elementId, count) {
 	}
 }
 
-// addBlankRows("page-one-rows", 18);
+addBlankRows("page-rows", 18);
 // addBlankRows("page-two-rows", 17);
