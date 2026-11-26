@@ -16,7 +16,7 @@ async function getDatas()
 			rows.innerHTML += `
 				<tr>
 					<td>${ j + 1 }</td>
-					<td>${ ids[0] }</td>
+					<td>${ ids[0].replaceAll("_", " ") }</td>
 				</tr>
 			`;
 		}
