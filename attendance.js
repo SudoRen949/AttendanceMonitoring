@@ -44,5 +44,5 @@ function addBlankRows(elementId, count) {
 	}
 }
 
-addBlankRows("page-one-rows", 18);
-addBlankRows("page-two-rows", 17);
+// addBlankRows("page-one-rows", 18);
+// addBlankRows("page-two-rows", 17);
