@@ -1,134 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Attendance and Punctuality Monitoring Sheet</title>
-<link rel="stylesheet" type="text/css" href="attendance.css">
-<script src="attendance.js" defer></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Attendance and Punctuality Monitoring Sheet</title>
+        <link rel="stylesheet" type="text/css" href="attendance.css">
+        <script src="attendance.js" defer></script>
+    </head>
+    <body>
+        <section class="page">
+            <header class="header">
+                <img src="header.png" alt="USTP header"/>
+            </header>
 
-<!-- Page 1 -->
-<section class="page">
-<header class="header">
-<div class="logo">USTP</div>
+            <h1>ATTENDANCE AND PUNCTUALITY MONITORING SHEET</h1>
 
-<div class="university">
-<strong>UNIVERSITY OF SCIENCE AND TECHNOLOGY<br>OF SOUTHERN PHILIPPINES</strong>
-<div class="campuses">
-Alubijid | Balubal | Cagayan de Oro | Claveria | Jasaan |
-Oroquieta | Panaon | Villanueva
-</div>
-</div>
+            <table class="details">
+                <tr>
+                    <td colspan="2">Office / Unit:</td>
+                </tr>
+                <tr>
+                    <td>Subject:</td>
+                    <td>Class Schedule:</td>
+                </tr>
+                <tr>
+                    <td>Course Code:</td>
+                    <td>Bldg. and Room No.:</td>
+                </tr>
+            </table>
 
-<table class="document-control">
-<tr><th colspan="3">Document Code No.</th></tr>
-<tr><td class="code" colspan="3">FM-USTP-ACAD-06</td></tr>
-<tr>
-<th>Rev. No.</th>
-<th>Effective Date</th>
-<th>Page No.</th>
-</tr>
-<tr>
-<td>00</td>
-<td>03.16.26</td>
-<td><strong>1 of 2</strong></td>
-</tr>
-</table>
-</header>
+            <table class="attendance">
+                <colgroup>
+                    <col class="number-col">
+                    <col class="name-col">
+                    <col class="course-col">
+                    <col class="check-col" span="10">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Name of Student</th>
+                        <th rowspan="2">Course &amp; Year</th>
+                        <th colspan="10" class="instruction">
+                            Indicate the date and put a checkmark if student is present
+                        </th>
+                    </tr>
+                    <tr class="date-row">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="page-one-rows"></tbody>
+            </table>
+        </section>
 
-<h1>ATTENDANCE AND PUNCTUALITY MONITORING SHEET</h1>
+        <!-- Footer -->
+        <section class="page continuation">
+            <!-- <header class="header">
+                <div class="logo">USTP</div>
+                <div class="university">
+                <strong>UNIVERSITY OF SCIENCE AND TECHNOLOGY<br>OF SOUTHERN PHILIPPINES</strong>
+                <div class="campuses">
+                Alubijid | Balubal | Cagayan de Oro | Claveria | Jasaan |
+                Oroquieta | Panaon | Villanueva
+                </div>
+                </div>
+                <table class="document-control">
+                <tr><th colspan="3">Document Code No.</th></tr>
+                <tr><td class="code" colspan="3">FM-USTP-ACAD-06</td></tr>
+                <tr>
+                <th>Rev. No.</th>
+                <th>Effective Date</th>
+                <th>Page No.</th>
+                </tr>
+                <tr>
+                <td>00</td>
+                <td>03.16.26</td>
+                <td><strong>2 of 2</strong></td>
+                </tr>
+                </table>
+            </header>
 
-<table class="details">
-<tr><td colspan="2">Office / Unit:</td></tr>
-<tr>
-<td>Subject:</td>
-<td>Class Schedule:</td>
-</tr>
-<tr>
-<td>Course Code:</td>
-<td>Bldg. and Room No.:</td>
-</tr>
-</table>
+            <table class="attendance">
+                <colgroup>
+                <col class="number-col">
+                <col class="name-col">
+                <col class="course-col">
+                <col class="check-col" span="10">
+                </colgroup>
+                <tbody id="page-two-rows"></tbody>
+            </table> -->
 
-<table class="attendance">
-<colgroup>
-<col class="number-col">
-<col class="name-col">
-<col class="course-col">
-<col class="check-col" span="10">
-</colgroup>
-<thead>
-<tr>
-<th rowspan="2">No.</th>
-<th rowspan="2">Name of Student</th>
-<th rowspan="2">Course &amp; Year</th>
-<th colspan="10" class="instruction">
-Indicate the date and put a checkmark if student is present
-</th>
-</tr>
-<tr class="date-row">
-<th></th><th></th><th></th><th></th><th></th>
-<th></th><th></th><th></th><th></th><th></th>
-</tr>
-</thead>
-<tbody id="page-one-rows"></tbody>
-</table>
-</section>
+            <div class="signatures">
+                <div class="signature-block">
+                    <div class="signature-label">Checked by:</div>
+                    <div>Subject Instructor/Professor</div>
+                </div>
 
-<!-- Page 2 -->
-<section class="page continuation">
-<header class="header">
-<div class="logo">USTP</div>
-
-<div class="university">
-<strong>UNIVERSITY OF SCIENCE AND TECHNOLOGY<br>OF SOUTHERN PHILIPPINES</strong>
-<div class="campuses">
-Alubijid | Balubal | Cagayan de Oro | Claveria | Jasaan |
-Oroquieta | Panaon | Villanueva
-</div>
-</div>
-
-<table class="document-control">
-<tr><th colspan="3">Document Code No.</th></tr>
-<tr><td class="code" colspan="3">FM-USTP-ACAD-06</td></tr>
-<tr>
-<th>Rev. No.</th>
-<th>Effective Date</th>
-<th>Page No.</th>
-</tr>
-<tr>
-<td>00</td>
-<td>03.16.26</td>
-<td><strong>2 of 2</strong></td>
-</tr>
-</table>
-</header>
-
-<table class="attendance">
-<colgroup>
-<col class="number-col">
-<col class="name-col">
-<col class="course-col">
-<col class="check-col" span="10">
-</colgroup>
-<tbody id="page-two-rows"></tbody>
-</table>
-
-<div class="signatures">
-<div class="signature-block">
-<div class="signature-label">Checked by:</div>
-<div>Subject Instructor/Professor</div>
-</div>
-
-<div class="signature-block">
-<div class="signature-label">Submitted to:</div>
-<div class="submitted-date">
-Date Submitted:<span class="blank-line"></span>
-</div>
-</div>
-</div>
-</section>
-</body>
+                <div class="signature-block">
+                    <div class="signature-label">Submitted to:</div>
+                    <div class="submitted-date">
+                        Date Submitted:<span class="blank-line"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
