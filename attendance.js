@@ -1,8 +1,6 @@
 const url = "https://amsys-3.vercel.app/api";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// let namesList = [];
-
 async function getDatas()
 {
 	const response = await fetch(`${ url }/zQRInformation`);
@@ -10,17 +8,11 @@ async function getDatas()
 	const data = await response.text();
 	if ( data ) {
 		const newData = data.split(',');
-		// newData.sort((a,b) => {
-		// 	const nameA = a.split('-')[0];
-		// 	const nameB = b.split('-')[0];
-		// 	return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
-		// });
 		const list = document.getElementById("studentsList");
 		for ( let i = 0; i < letters.length; ++i ) {
 			for ( let j = 0; j < newData.length; ++j ) {
 				const ids = newData[j].split('-');
 				if ( ids[0][0] == letters[i] && !list.innerHTML.includes(ids[0]) ) {
-					// namesList.push(newData[j]);
 					list.innerHTML += `
 						<tr>
 							<td>${ ids[0] }</td>
@@ -34,23 +26,23 @@ async function getDatas()
 				}
 			}
 		}
-		// for ( let i = 0; i < namesList.length; ++i ) {
-		// 	const ids = newData[i].split('-');
-		// 	if ( list.innerHTML.includes(ids[0]) ) continue;
-		// 	list.innerHTML += `
-		// 		<tr>
-		// 			<td>${ ids[0] }</td>
-		// 			<td>${ ids[1] }</td>
-		// 			<td>${ ids[2] }</td>
-		// 			<td>${ ids[3] }</td>
-		// 			<td>${ ids[5] }</td>
-		// 			<td>${ ids[7] }</td>
-		// 		</tr>
-		// 	`;
-		// }
 	}
 }
 
 document.getElementById("dateToday").innerText = new Date().toDateString();
 
-getDatas();
+// getDatas();
+
+function addBlankRows(elementId, count) {
+	const tbody = document.getElementById(elementId);
+	for (let i = 0; i < count; i++) {
+		const row = document.createElement("tr");
+		for (let column = 0; column < 13; column++) {
+			row.appendChild(document.createElement("td"));
+		}
+		tbody.appendChild(row);
+	}
+}
+
+addBlankRows("page-one-rows", 18);
+addBlankRows("page-two-rows", 17);
