@@ -1,66 +1,223 @@
 @page {
-    size: A4 landscape;
-    margin: 10mm;
-  }
-
-  .attendance-sheet {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    font-family: "Times New Roman", serif;
-    font-size: 12pt;
-  }
-
-  .attendance-sheet th,
-  .attendance-sheet td {
-    border: 1px solid #111;
-    padding: 3px 6px;
-  }
-
-  .attendance-sheet .details-row td {
-    height: 9mm;
-  }
-
-  .attendance-sheet thead th {
-    height: 9mm;
-    text-align: center;
-    font-weight: normal;
-  }
-
-  .attendance-sheet .instruction {
-    text-align: left;
-  }
-
-  .attendance-sheet .date-row th {
-    height: 8mm;
-  }
-
-  .attendance-sheet tbody td {
-    height: 7mm;
-  }
-
-  .number-col {
-    width: 3.6%;
-  }
-
-  .name-col {
-    width: 33%;
-  }
-
-  .course-col {
-    width: 12.5%;
-  }
-
-  .date-col {
-    width: 5.09%;
-  }
-
-  @media print {
-    .attendance-sheet {
-      page-break-inside: auto;
+      size: A4 landscape;
+      margin: 10mm;
     }
 
-    .attendance-sheet tr {
-      page-break-inside: avoid;
+    * {
+      box-sizing: border-box;
     }
-  }
+
+    body {
+      margin: 0;
+      color: #111;
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 190mm;
+      position: relative;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 115px 1fr 205px;
+      gap: 12px;
+      align-items: start;
+      min-height: 37mm;
+    }
+
+    .logo {
+      height: 33mm;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a68000;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+
+    .university {
+      text-align: center;
+      padding-top: 3mm;
+    }
+
+    .university strong {
+      display: block;
+      font-size: 14pt;
+      line-height: 1.5;
+    }
+
+    .campuses {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 3px 6px;
+      border: 1px solid #ccc;
+      font-size: 9pt;
+    }
+
+    .document-control {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 9pt;
+    }
+
+    .document-control th,
+    .document-control td {
+      border: 1px solid #111;
+      padding: 4px 3px;
+    }
+
+    .document-control th {
+      background: #08265f;
+      color: #fff;
+    }
+
+    .document-control .code {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 4mm 0 7mm;
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15pt;
+    }
+
+    .details {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 12pt;
+    }
+
+    .details td {
+      height: 9mm;
+      border: 1px solid #111;
+      padding: 2px 7px;
+    }
+
+    .attendance {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 11pt;
+    }
+
+    .attendance th,
+    .attendance td {
+      border: 1px solid #111;
+      padding: 2px;
+    }
+
+    .attendance thead th {
+      height: 9mm;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    .attendance .instruction {
+      text-align: left;
+      padding-left: 7px;
+    }
+
+    .attendance .date-row th {
+      height: 8mm;
+    }
+
+    .attendance tbody td {
+      height: 7mm;
+    }
+
+    .number-col {
+      width: 3.6%;
+      text-align: center;
+    }
+
+    .name-col {
+      width: 33%;
+    }
+
+    .course-col {
+      width: 12.5%;
+      text-align: center;
+    }
+
+    .check-col {
+      width: 5.09%;
+    }
+
+    .continuation .header {
+      min-height: 37mm;
+    }
+
+    .continuation .attendance tbody td {
+      height: 7.3mm;
+    }
+
+    .signatures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10mm;
+      margin-top: 8mm;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 12pt;
+    }
+
+    .signature-block {
+      text-align: center;
+    }
+
+    .signature-label {
+      margin-bottom: 8mm;
+    }
+
+    .signature-line {
+      min-height: 8mm;
+      border-bottom: 1px solid transparent;
+    }
+
+    .submitted-date {
+      margin-top: 4mm;
+      text-align: left;
+    }
+
+    .blank-line {
+      display: inline-block;
+      width: 55%;
+      margin-left: 8px;
+      border-bottom: 1px solid #111;
+    }
+
+    @media screen {
+      body {
+        background: #eee;
+      }
+
+      .page {
+        max-width: 297mm;
+        min-height: 210mm;
+        margin: 10mm auto;
+        padding: 10mm;
+        background: white;
+        box-shadow: 0 0 5px #aaa;
+      }
+    }
+
+    @media print {
+      .page {
+        min-height: 190mm;
+        padding: 0;
+      }
+    }
