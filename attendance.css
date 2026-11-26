@@ -217,7 +217,8 @@
 
     @media print {
       .page {
-        min-height: 190mm;
+        /* min-height: 190mm; */
+        min-height: 80mm;
         padding: 0;
       }
     }
