@@ -1,37 +1,29 @@
 const url = "https://amsys-3.vercel.app/api";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// async function getDatas()
-// {
-// 	const response = await fetch(`${ url }/zQRInformation`);
-// 	if ( response.status != 200 ) return;
-// 	const data = await response.text();
-// 	if ( data ) {
-// 		const newData = data.split(',');
-// 		const list = document.getElementById("studentsList");
-// 		for ( let i = 0; i < letters.length; ++i ) {
-// 			for ( let j = 0; j < newData.length; ++j ) {
-// 				const ids = newData[j].split('-');
-// 				if ( ids[0][0] == letters[i] && !list.innerHTML.includes(ids[0]) ) {
-// 					list.innerHTML += `
-// 						<tr>
-// 							<td>${ ids[0] }</td>
-// 							<td>${ ids[1] }</td>
-// 							<td>${ ids[2] }</td>
-// 							<td>${ ids[3] }</td>
-// 							<td>${ ids[5] }</td>
-// 							<td>${ ids[7] }</td>
-// 						</tr>
-// 					`;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+async function getDatas()
+{
+	const response = await fetch(`${ url }/zQRInformation`);
+	if ( !response.ok ) return;
+	const data = await response.text();
+	if ( data.length == 0 ) return;
+	const newData = data.split(',');
+	const rows = document.getElementById("pageRows");
+	for ( let i = 0; i < letters.length; ++i ) {
+		for ( let j = 0; j < newData.length; ++j ) {
+			const ids = newData[j].split('-');
+			if ( ids[0][0] == letters[i] || rows.textContent.includes(ids[0]) ) continue;
+			rows.innerHTML += `
+				<tr>
+					<td>${ j + 1 }</td>
+					<td>${ ids[0] }</td>
+				</tr>
+			`;
+		}
+	}
+}
 
-// document.getElementById("dateToday").innerText = new Date().toDateString();
-
-// getDatas();
+getDatas();
 
 // function addBlankRows(elementId, count) {
 // 	const tbody = document.getElementById(elementId);
