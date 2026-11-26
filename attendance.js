@@ -13,7 +13,7 @@ async function getDatas()
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length; ++j ) {
 			const ids = newData[j].split('-');
-			if ( ids[0][0] == letters[i] || rows.textContent.includes(ids[0]) ) continue;
+			if ( ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
 				<tr>
 					<td>${ j + 1 }</td>
