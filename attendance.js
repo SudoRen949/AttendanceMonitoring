@@ -9,6 +9,7 @@ async function getDatas()
 	if ( data.length == 0 ) return;
 	const newData = data.split(',');
 	const rows = document.getElementById("pageRows");
+	rows.innerText = "";
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length; ++j ) {
 			const ids = newData[j].split('-');
