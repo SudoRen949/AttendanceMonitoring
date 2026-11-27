@@ -15,7 +15,7 @@ async function getDatas()
 	document.getElementById('subject').innerText = newData[newData.length-4];
 	document.getElementById('schedule').innerText = newData[newData.length-2];
 	document.getElementById('course').innerText = newData[newData.length-6].split('_')[0];
-	document.getElementById('building').innerText = newData[newData.length-1];
+	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1];
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length - 6; ++j ) {
 			const ids = newData[j].split('-');
