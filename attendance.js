@@ -27,10 +27,11 @@ async function getDatas()
 					<td>${ newData[newData.length-6] }</td>
 				</tr>
 			`;
-			for ( let k = 0; k < 9; ++k ) {
-				document.getElementById(`${j+1}`).innerHTML += `<td id="${j+1}${k+1}"></td>`;
-			}
 		}
+	}
+	// adds empty list after the course & year
+	for ( let k = 0; k < 10; ++k ) {
+		document.getElementById(`${j+1}`).innerHTML += `<td id="${j+1}${k+1}"></td>`;
 	}
 	// date rows
 	const dateRow = document.getElementById("dateRow");
