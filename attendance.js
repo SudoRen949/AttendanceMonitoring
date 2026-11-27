@@ -59,13 +59,14 @@ async function getDatas()
 		for ( let j = 0; j < newData.length-6; ++j ) {
 			const ids2 = newData[j].split('-');
 			if ( ids2[0][0] != letters[i] ) continue;
-			for ( let k = 0; k < dateList.length; ++k ) {
-				if ( ids2[5] != "xx xx" ) {
-					document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10004;";
-				} else {
-					document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10005;";
-				}
-			}
+			// for ( let k = 0; k < dateList.length; ++k ) {
+			// 	if ( dateList[k] == undefined ) continue;
+			// 	if ( ids2[5] != "xx xx" ) {
+			// 		document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10004;";
+			// 	} else {
+			// 		document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10005;";
+			// 	}
+			// }
 		}
 	}
 }
