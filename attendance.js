@@ -24,6 +24,7 @@ async function getDatas()
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
+					<td>${ ids[ids.length-6] }</td>
 				</tr>
 			`;
 		}
