@@ -50,9 +50,9 @@ async function getDatas()
 	}
 	// and put it to the cells
 	dateList.forEach((date, index) => {
-		if ( dateList[i] == undefined ) return;
+		if ( date == undefined ) return;
 		const dateRowValue = document.getElementById(`date-${i}`);
-		dateRowValue.innerText = dateList[i];
+		dateRowValue.innerText = date;
 	});
 }
 
