@@ -11,13 +11,13 @@ async function getDatas()
 	const newData = data.split(',');
 	const rows = document.getElementById("page-rows");
 	rows.innerText = "";
-	document.getElementById('office').innerText = newData[newData.length-5];
-	document.getElementById('subject').innerText = newData[newData.length-4];
-	document.getElementById('schedule').innerText = newData[newData.length-2];
-	document.getElementById('course').innerText = newData[newData.length-6].split('_')[0];
-	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1].replaceAll('_','-');
+	document.getElementById('office').innerText = newData[newData.length-4];
+	document.getElementById('subject').innerText = newData[newData.length-3];
+	document.getElementById('schedule').innerText = newData[newData.length-1];
+	document.getElementById('course').innerText = newData[newData.length-5].split('_')[0];
+	document.getElementById('building').innerText = newData[newData.length].split(' ')[1].replaceAll('_','-');
 	for ( let i = 0; i < letters.length; ++i ) {
-		for ( let j = 0; j < newData.length-6; ++j ) {
+		for ( let j = 0; j < newData.length-5; ++j ) {
 			const ids = newData[j].split('-');
 			if (ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			// adds cells for the index no, student name, and the course & year
@@ -25,7 +25,7 @@ async function getDatas()
 				<tr id="s-${ j + 1 }">
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
-					<td>${ newData[newData.length-6] }</td>
+					<td>${ newData[newData.length-5] }</td>
 				</tr>
 			`;
 			// adds empty cells for the attendance markings
