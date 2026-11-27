@@ -21,10 +21,15 @@ async function getDatas()
 			const ids = newData[j].split('-');
 			if (ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
-				<tr>
+				<tr id="${ j + 1 }">
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
 					<td>${ newData[newData.length-6] }</td>
+			`;
+			for ( let k = 0; k < 9; ++k ) {
+				rows.innerHTML += `<td id="${j+1}${k+1}"></td>`;
+			}
+			rows.innerHTML += `
 				</tr>
 			`;
 		}
