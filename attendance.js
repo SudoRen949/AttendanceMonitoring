@@ -13,9 +13,9 @@ async function getDatas()
 	rows.innerText = "";
 	document.getElementById('office').innerText = newData[newData.length-4];
 	document.getElementById('subject').innerText = newData[newData.length-3];
-	document.getElementById('schedule').innerText = newData[newData.length-1];
+	document.getElementById('schedule').innerText = newData[newData.length-2];
 	document.getElementById('course').innerText = newData[newData.length-5].split('_')[0];
-	document.getElementById('building').innerText = newData[newData.length].split(' ')[1].replaceAll('_','-');
+	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1].replaceAll('_','-');
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length-5; ++j ) {
 			const ids = newData[j].split('-');
