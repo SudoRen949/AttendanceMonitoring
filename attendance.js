@@ -49,26 +49,11 @@ async function getDatas()
 		dateCounter++;
 	}
 	// and put it to the cells
-	for ( let i = 0; i < dateList.length; ++i ) {
-		if ( dateList[i] == undefined ) continue;
+	dateList.forEach((date, index) => {
+		if ( dateList[i] == undefined ) return;
 		const dateRowValue = document.getElementById(`date-${i}`);
 		dateRowValue.innerText = dateList[i];
-	}
-	// write check marks
-	for ( let i = 0; i < letters.length; ++i ) {
-		for ( let j = 0; j < newData.length-6; ++j ) {
-			const ids2 = newData[j].split('-');
-			if ( ids2[0][0] != letters[i] ) continue;
-			// for ( let k = 0; k < dateList.length; ++k ) {
-			// 	if ( dateList[k] == undefined ) continue;
-			// 	if ( ids2[5] != "xx xx" ) {
-			// 		document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10004;";
-			// 	} else {
-			// 		document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10005;";
-			// 	}
-			// }
-		}
-	}
+	});
 }
 
 getDatas();
