@@ -48,7 +48,7 @@ async function getDatas()
 	for ( let i = 0; i < dateList.length; ++i ) {
 		if ( dateList[i] == undefined ) continue;
 		const dateRowValue = document.getElementById(`date-${i}`);
-		dateRowValue.innerText += date;
+		dateRowValue.innerText += dateList[i];
 	}
 }
 
