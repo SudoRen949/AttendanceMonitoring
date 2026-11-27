@@ -27,10 +27,12 @@ async function getDatas()
 					<td>${ newData[newData.length-6] }</td>
 				</tr>
 			`;
-			// adds empty list after the course & year
-			for ( let k = 0; k < 10; ++k ) {
-				document.getElementById(`${j+1}`).innerHTML += `<td id="${j+1}${k+1}"></td>`;
-			}
+		}
+	}
+	// adds empty list after the course & year
+	for ( let i = 0; i < newData.length - 6; ++i ) {
+		for ( let j = 0; j < 10; ++j ) {
+			document.getElementById(`${i+1}`).innerHTML += `<td id="${i+1}${j+1}"></td>`;
 		}
 	}
 	// date rows
