@@ -51,7 +51,7 @@ async function getDatas()
 	// and put it to the cells
 	dateList.forEach((date, index) => {
 		if ( date == undefined ) return;
-		const dateRowValue = document.getElementById(`date-${i}`);
+		const dateRowValue = document.getElementById(`date-${index}`);
 		dateRowValue.innerText = date;
 	});
 }
