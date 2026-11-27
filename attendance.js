@@ -9,7 +9,7 @@ async function getDatas()
 	if ( data.length == 0 ) return;
 	// student lists
 	const newData = data.split(',');
-	const rows = document.getElementById("pageRows");
+	const rows = document.getElementById("page-rows");
 	rows.innerText = "";
 	document.getElementById('office').innerText = newData[newData.length-5];
 	document.getElementById('subject').innerText = newData[newData.length-4];
