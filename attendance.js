@@ -38,10 +38,7 @@ async function getDatas()
 	const allDateList = Object.keys(dateData);
 	let dateCounter = 0, dateList = [];
 	for ( let i = allDateList.length; i >= 0; --i ) {
-		if ( dateCounter < 5 ) {
-			dateRow.innerHTML += `<th id="date-${dateCounter}"></th>`;
-			dateList.unshift(allDateList[i]);
-		}
+		if ( dateCounter < 5 ) dateList.unshift(allDateList[i]);
 		else break;
 		dateCounter++;
 	}
