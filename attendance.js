@@ -18,12 +18,13 @@ async function getDatas()
 			document.getElementById('subject').innerText = ids[ids.length-4];
 			document.getElementById('schedule').innerText = ids[ids.length-2];
 			document.getElementById('course').innerText = ids[ids.length-6].split('_')[0];
+			const courseAndYear = ids[ids.length-6];
 			if ( ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
 				<tr>
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
-					<td>${ ids[ids.length-6] }</td>
+					<td>${ courseAndYear }</td>
 				</tr>
 			`;
 		}
