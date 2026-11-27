@@ -34,7 +34,14 @@ async function getDatas()
 	if ( !dateResponse.ok ) return;
 	const dateData = await dateResponse.json();
 	if ( Object.keys(dateData).length == 0 ) return;
-	// console.log(JSON.stringify(dateData));
+	const allDateList = Object.keys(dateData);
+	let dateCounter = 0, dateList = [];
+	for ( let i = allDateList.length; i >= 0; --i ) {
+		if ( dateCounter < 5 ) dateList.push(allDateList[i]);
+		else break;
+		dateCounter++;
+	}
+	console.log(dateList);
 }
 
 getDatas();
