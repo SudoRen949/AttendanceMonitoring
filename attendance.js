@@ -17,9 +17,10 @@ async function getDatas()
 	document.getElementById('course').innerText = newData[newData.length-6].split('_')[0];
 	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1].replaceAll('_','-');
 	for ( let i = 0; i < letters.length; ++i ) {
-		for ( let j = 0; j < newData.length - 6; ++j ) {
+		for ( let j = 0; j < newData.length-6; ++j ) {
 			const ids = newData[j].split('-');
 			if (ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
+			// adds cells for the index no, student name, and the course & year
 			rows.innerHTML += `
 				<tr id="s-${ j + 1 }">
 					<td>${ j + 1 }</td>
@@ -27,7 +28,7 @@ async function getDatas()
 					<td>${ newData[newData.length-6] }</td>
 				</tr>
 			`;
-			// adds empty list after the course & year
+			// adds empty cells for the attendance markings
 			for ( let k = 0; k < 10; ++k ) {
 				document.getElementById(`s-${j+1}`).innerHTML += `<td id="a-${j+1}${k+1}"></td>`;
 			}
@@ -41,15 +42,31 @@ async function getDatas()
 	if ( Object.keys(dateData).length == 0 ) return;
 	const allDateList = Object.keys(dateData);
 	let dateCounter = 0, dateList = [];
+	// adds the 10 latest dates
 	for ( let i = allDateList.length; i >= 0; --i ) {
-		if ( dateCounter < 5 ) dateList.unshift(allDateList[i]);
+		if ( dateCounter < 10 ) dateList.unshift(allDateList[i]);
 		else break;
 		dateCounter++;
 	}
+	// and put it to the cells
 	for ( let i = 0; i < dateList.length; ++i ) {
 		if ( dateList[i] == undefined ) continue;
 		const dateRowValue = document.getElementById(`date-${i}`);
 		dateRowValue.innerText = dateList[i];
+	}
+	// write check marks
+	for ( let i = 0; i < letters.length; ++i ) {
+		for ( let j = 0; j < newData.length-6; ++j ) {
+			const ids2 = newData[j].split('-');
+			if ( ids2[0][0] != letters[i] ) continue;
+			for ( let k = 0; k < dateList.length; ++k ) {
+				if ( ids2[5] != "xx xx" ) {
+					document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10004;";
+				} else {
+					document.getElementById(`a-${j+1}${k+1}`).innerHTML = "&#10005;";
+				}
+			}
+		}
 	}
 }
 
