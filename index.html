@@ -14,74 +14,76 @@
                 <img src="header.png" alt="USTP header" height=""/>
             </header>
 
-            <h1>ATTENDANCE AND PUNCTUALITY MONITORING SHEET</h1>
+            <div class="basta">
+                <h1>ATTENDANCE AND PUNCTUALITY MONITORING SHEET</h1>
 
-            <table class="details">
-                <tr>
-                    <td colspan="2">
-                        Office / Unit: <strong id="office"></strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Subject: <strong id="subject"></strong>
-                    </td>
-                    <td>
-                        Class Schedule: <strong id="schedule"></strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Course Code: <strong id="course"></strong>
-                    </td>
-                    <td>
-                        Bldg. and Room No.: <strong id="building"></strong>
-                    </td>
-                </tr>
-            </table>
-
-            <table class="attendance">
-                <colgroup>
-                    <col class="number-col">
-                    <col class="name-col">
-                    <col class="course-col">
-                    <col class="check-col" span="10">
-                </colgroup>
-                <thead>
+                <table class="details">
                     <tr>
-                        <th rowspan="2">No.</th>
-                        <th rowspan="2">Name of Student</th>
-                        <th rowspan="2">Course &amp; Year</th>
-                        <th colspan="10" class="instruction">
-                            Indicate the date and put a checkmark if student is present
-                        </th>
+                        <td colspan="2">
+                            Office / Unit: <strong id="office"></strong>
+                        </td>
                     </tr>
-                    <tr id="dateRow" class="date-row">
-                        <th id="date-0"></th>
-                        <th id="date-1"></th>
-                        <th id="date-2"></th>
-                        <th id="date-3"></th>
-                        <th id="date-4"></th>
-                        <th id="date-5"></th>
-                        <th id="date-6"></th>
-                        <th id="date-7"></th>
-                        <th id="date-8"></th>
-                        <th id="date-9"></th>
+                    <tr>
+                        <td>
+                            Subject: <strong id="subject"></strong>
+                        </td>
+                        <td>
+                            Class Schedule: <strong id="schedule"></strong>
+                        </td>
                     </tr>
-                </thead>
-                <tbody id="page-rows"></tbody>
-            </table>
+                    <tr>
+                        <td>
+                            Course Code: <strong id="course"></strong>
+                        </td>
+                        <td>
+                            Bldg. and Room No.: <strong id="building"></strong>
+                        </td>
+                    </tr>
+                </table>
 
-            <div class="signatures">
-                <div class="signature-block">
-                    <div class="signature-label">Checked by:</div>
-                    <div>Subject Instructor/Professor</div>
-                </div>
+                <table class="attendance">
+                    <colgroup>
+                        <col class="number-col">
+                        <col class="name-col">
+                        <col class="course-col">
+                        <col class="check-col" span="10">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">No.</th>
+                            <th rowspan="2">Name of Student</th>
+                            <th rowspan="2">Course &amp; Year</th>
+                            <th colspan="10" class="instruction">
+                                Indicate the date and put a checkmark if student is present
+                            </th>
+                        </tr>
+                        <tr id="dateRow" class="date-row">
+                            <th id="date-0"></th>
+                            <th id="date-1"></th>
+                            <th id="date-2"></th>
+                            <th id="date-3"></th>
+                            <th id="date-4"></th>
+                            <th id="date-5"></th>
+                            <th id="date-6"></th>
+                            <th id="date-7"></th>
+                            <th id="date-8"></th>
+                            <th id="date-9"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="page-rows"></tbody>
+                </table>
 
-                <div class="signature-block">
-                    <div class="signature-label">Submitted to:</div>
-                    <div class="submitted-date">
-                        Date Submitted:<span class="blank-line"></span>
+                <div class="signatures">
+                    <div class="signature-block">
+                        <div class="signature-label">Checked by:</div>
+                        <div>Subject Instructor/Professor</div>
+                    </div>
+
+                    <div class="signature-block">
+                        <div class="signature-label">Submitted to:</div>
+                        <div class="submitted-date">
+                            Date Submitted:<span class="blank-line"></span>
+                        </div>
                     </div>
                 </div>
             </div>

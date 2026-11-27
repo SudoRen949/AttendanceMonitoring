@@ -22,6 +22,10 @@ body {
   /* page-break-after: always; */
 }
 
+.basta {
+  padding: 30mm;
+}
+
 .page:last-child {
   page-break-after: auto;
 }
@@ -221,5 +225,8 @@ h1 {
     /* min-height: 190mm; */
     min-height: 80mm;
     padding: 0;
+  }
+  .basta {
+    padding: 10mm;
   }
 }
