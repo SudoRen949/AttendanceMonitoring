@@ -14,10 +14,10 @@ async function getDatas()
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length; ++j ) {
 			const ids = newData[j].split('-');
-			document.getElementById('office').innerText = ids[newData.length-5];
-			document.getElementById('subject').innerText = ids[newData.length-4];
-			document.getElementById('schedule').innerText = ids[newData.length-2];
-			document.getElementById('course').innerText = ids[newData.length-6].split('_')[0];
+			document.getElementById('office').innerText = ids[ids.length-5];
+			document.getElementById('subject').innerText = ids[ids.length-4];
+			document.getElementById('schedule').innerText = ids[ids.length-2];
+			document.getElementById('course').innerText = ids[ids.length-6].split('_')[0];
 			if ( ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
 				<tr>
