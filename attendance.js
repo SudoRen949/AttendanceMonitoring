@@ -25,13 +25,11 @@ async function getDatas()
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
 					<td>${ newData[newData.length-6] }</td>
-			`;
-			for ( let k = 0; k < 9; ++k ) {
-				rows.innerHTML += `<td id="${j+1}${k+1}"></td>`;
-			}
-			rows.innerHTML += `
 				</tr>
 			`;
+			for ( let k = 0; k < 9; ++k ) {
+				document.getElementById(`${j+1}`).innerHTML += `<td id="${j+1}${k+1}"></td>`;
+			}
 		}
 	}
 	// date rows
