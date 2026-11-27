@@ -1,6 +1,7 @@
 @page {
   size: A4 landscape;
-  margin: 10mm;
+  /* margin: 10mm; */
+  margin: 30mm;
 }
 
 * {
@@ -18,7 +19,7 @@ body {
   width: 100%;
   min-height: 190mm;
   position: relative;
-  page-break-after: always;
+  /* page-break-after: always; */
 }
 
 .page:last-child {
