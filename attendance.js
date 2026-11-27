@@ -44,7 +44,7 @@ async function getDatas()
 	}
 	for ( date of dateList ) {
 		if ( date == undefined ) continue;
-		dateRow += `<th>${ date }<th>`;
+		dateRow.innerHTML += `<th>${ date }<th>`;
 	}
 }
 
