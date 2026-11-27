@@ -23,7 +23,7 @@ body {
 }
 
 .basta {
-  padding: 30mm;
+  padding: 1mm;
 }
 
 .page:last-child {
@@ -227,6 +227,6 @@ h1 {
     padding: 0;
   }
   .basta {
-    padding: 10mm;
+    padding: 1mm;
   }
 }
