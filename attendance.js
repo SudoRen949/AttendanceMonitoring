@@ -21,18 +21,16 @@ async function getDatas()
 			const ids = newData[j].split('-');
 			if (ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
-				<tr id="${ j + 1 }">
+				<tr id="s-${ j + 1 }">
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
 					<td>${ newData[newData.length-6] }</td>
 				</tr>
 			`;
-		}
-	}
-	// adds empty list after the course & year
-	for ( let i = 0; i < newData.length - 6; ++i ) {
-		for ( let j = 0; j < 10; ++j ) {
-			document.getElementById(`${i+1}`).innerHTML += `<td id="${i+1}${j+1}"></td>`;
+			// adds empty list after the course & year
+			for ( let k = 0; k < 10; ++k ) {
+				document.getElementById(`s-${j+1}`).innerHTML += `<td id="a-${j+1}${k+1}"></td>`;
+			}
 		}
 	}
 	// date rows
