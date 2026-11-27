@@ -30,6 +30,7 @@ async function getDatas()
 		}
 	}
 	// date rows
+	const dateRow = document.getElementById("dateRow");
 	const dateResponse = await fetch(`${ url }/zAttendance`);
 	if ( !dateResponse.ok ) return;
 	const dateData = await dateResponse.json();
@@ -41,7 +42,10 @@ async function getDatas()
 		else break;
 		dateCounter++;
 	}
-	console.log(dateList);
+	for ( date of dateList ) {
+		if ( date == undefined ) continue;
+		dateRow += `<th>${ date }<th>`;
+	}
 }
 
 getDatas();
