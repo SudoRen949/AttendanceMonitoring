@@ -11,19 +11,19 @@ async function getDatas()
 	const newData = data.split(',');
 	const rows = document.getElementById("pageRows");
 	rows.innerText = "";
+	document.getElementById('office').innerText = newData[newData.length-5];
+	document.getElementById('subject').innerText = newData[newData.length-4];
+	document.getElementById('schedule').innerText = newData[newData.length-2];
+	document.getElementById('course').innerText = newData[newData.length-6].split('_')[0];
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length; ++j ) {
 			const ids = newData[j].split('-');
-			document.getElementById('office').innerText = ids[ids.length-5];
-			document.getElementById('subject').innerText = ids[ids.length-4];
-			document.getElementById('schedule').innerText = ids[ids.length-2];
-			document.getElementById('course').innerText = ids[ids.length-6].split('_')[0];
 			if ( ids[0][0] != letters[i] || rows.textContent.includes(ids[0]) ) continue;
 			rows.innerHTML += `
 				<tr>
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
-					<td>${ ids[1] }</td>
+					<td>${ newData[newData.length-6] }</td>
 				</tr>
 			`;
 		}
