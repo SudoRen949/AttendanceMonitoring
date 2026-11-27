@@ -1,5 +1,5 @@
 const url = "https://amsys-3.vercel.app/api";
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // used for alphabetical ordering
 
 async function getDatas()
 {
@@ -7,7 +7,7 @@ async function getDatas()
 	if ( !response.ok ) return;
 	const data = await response.text();
 	if ( data.length == 0 ) return;
-	// console.log(data);
+	// student lists
 	const newData = data.split(',');
 	const rows = document.getElementById("pageRows");
 	rows.innerText = "";
@@ -15,7 +15,7 @@ async function getDatas()
 	document.getElementById('subject').innerText = newData[newData.length-4];
 	document.getElementById('schedule').innerText = newData[newData.length-2];
 	document.getElementById('course').innerText = newData[newData.length-6].split('_')[0];
-	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1];
+	document.getElementById('building').innerText = newData[newData.length-1].split(' ')[1].replaceAll('_','-');
 	for ( let i = 0; i < letters.length; ++i ) {
 		for ( let j = 0; j < newData.length - 6; ++j ) {
 			const ids = newData[j].split('-');
@@ -29,6 +29,12 @@ async function getDatas()
 			`;
 		}
 	}
+	// date rows
+	const dateResponse = await fetch(`${ url }/zAttendance`);
+	if ( !dateResponse.ok ) return;
+	const dateData = await dateResponse.json();
+	if ( Object.keys(dateData).length == 0 ) return;
+	// console.log(JSON.stringify(dateData));
 }
 
 getDatas();
