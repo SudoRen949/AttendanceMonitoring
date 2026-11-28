@@ -12,7 +12,7 @@ async function getDatas()
 	const rows = document.getElementById("page-rows");
 	rows.innerText = "";
 	document.getElementById('office').innerText = newData[newData.length-3];
-	document.getElementById('subject').innerText = ${newData[newData.length-1].split('|')[newData[newData.length-1].split('|').length-1]};
+	document.getElementById('subject').innerText = newData[newData.length-1].split('|')[newData[newData.length-1].split('|').length-1];
 	newData[newData.length-1].split('|').forEach((a, i) => {
 		if ( i % 2 != 0 || i == 6 ) return;
 		document.getElementById('schedule').innerHTML += `<br/>${a}`;
