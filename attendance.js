@@ -15,7 +15,7 @@ async function getDatas()
 	document.getElementById('subject').innerText = newData[newData.length-2] + ` ${newData[newData.length-1].split('|')[newData[newData.length-1].split('|').length-1]}`;
 	newData[newData.length-1].split('|').forEach((a, i) => {
 		if ( i % 2 != 0 || i == 6 ) return;
-		document.getElementById('schedule').innerText += `${a},`;
+		document.getElementById('schedule').innerText += ` ${a}`;
 	});
 	// document.getElementById('course').innerText = newData[newData.length-5].split('_')[0];
 	document.getElementById('building').innerText = newData[newData.length-1].split('|')[1].split(' ')[1].replaceAll('_','-');
