@@ -34,7 +34,7 @@ async function getDatas()
 				<tr id="s-${ j + 1 }">
 					<td>${ j + 1 }</td>
 					<td>${ ids[0].replaceAll("_", " ") }</td>
-					<td>${ newData[newData.length-5] }</td>
+					<td>${ newData[newData.length-4] }</td>
 				</tr>
 			`;
 			// adds empty cells for the attendance markings
