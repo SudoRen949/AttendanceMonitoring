@@ -20,7 +20,9 @@ async function getDatas()
 	// document.getElementById('course').innerText = newData[newData.length-5].split('_')[0];
 	newData[newData.length-1].split('|').forEach((a, i) => {
 		if ( i % 2 == 0 || i == 6 ) return;
-		document.getElementById('building').innerHTML += `<br/>${a.split(' ')[1].replaceAll('_','-')}<br/>`;
+		const building = document.getElementById('building');
+		if ( building.textContent.length > 0 ) building.innerHTML += ', ';
+		building.innerHTML += `${a.split(' ')[1].replaceAll('_','-')}`;
 	})
 	// document.getElementById('building').innerText = newData[newData.length-1].split('|')[1].split(' ')[1].replaceAll('_','-');
 	for ( let i = 0; i < letters.length; ++i ) {
