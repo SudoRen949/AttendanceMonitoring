@@ -19,8 +19,9 @@ async function getDatas()
 	});
 	document.getElementById('course').innerText = newData[newData.length-2];
 	newData[newData.length-1].split('|').forEach((a, i) => {
-		if ( i % 2 == 0 || i == 6 ) return;
 		const building = document.getElementById('building');
+		if ( i % 2 == 0 || i == 6 ) return;
+		if ( building.textContent.includes(a.split(' ')[1].replaceAll('_','-')) ) return;
 		if ( building.textContent.length > 0 ) building.innerHTML += ', ';
 		building.innerHTML += `${a.split(' ')[1].replaceAll('_','-')}`;
 	})
