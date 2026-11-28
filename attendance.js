@@ -38,10 +38,10 @@ async function getDatas()
 					<td>${ newData[newData.length-4] }</td>
 				</tr>
 			`;
-			// adds empty cells for the attendance markings
-			for ( let k = 0; k < 10; ++k ) {
-				document.getElementById(`s-${j+1}`).innerHTML += `<td id="a-${j+1}${k+1}"></td>`;
-			}
+			// // adds empty cells for the attendance markings
+			// for ( let k = 0; k < 10; ++k ) {
+			// 	document.getElementById(`s-${j+1}`).innerHTML += `<td id="a-${j+1}${k+1}"></td>`;
+			// }
 		}
 	}
 	// date rows
@@ -63,6 +63,13 @@ async function getDatas()
 		if ( date == undefined ) return;
 		const dateRowValue = document.getElementById(`date-${index}`);
 		dateRowValue.innerText = date;
+		for ( let j = 0; j < newData.length-5; ++j ) {
+			const ids = newData[j].split('-');
+			// adds empty cells for the attendance markings
+			for ( let k = 0; k < 10; ++k ) {
+				document.getElementById(`s-${j+1}`).innerHTML += `<td id="a-${j+1}${k+1}_${date}"></td>`;
+			}
+		}
 	});
 }
 
